@@ -55,22 +55,45 @@ export default function HomePage() {
           unified dashboard.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href={`${basePath}/downloads/VirdLauncherHub.dmg`}
-            download
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-xl shadow-indigo-600/30 hover:shadow-indigo-500/40 transition-all duration-200"
-          >
-            <Apple className="w-4 h-4 fill-current" />
-            <span>Download for macOS (.dmg)</span>
-            <span className="text-[10px] bg-white/20 px-1.5 py-0.5 rounded font-mono">v1.0.0</span>
-          </a>
+        <div className="mt-10 flex flex-col items-center justify-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+            <a
+              href={`${basePath}/downloads/VirdLauncherHub.dmg`}
+              download
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-xl shadow-indigo-600/30 hover:shadow-indigo-500/40 transition-all duration-200"
+            >
+              <Image
+                src={`${basePath}/apple-icon.png`}
+                alt="Apple"
+                width={18}
+                height={18}
+                className="w-4 h-4 object-contain brightness-0 invert"
+              />
+              <span>Download for macOS (.dmg)</span>
+              <span className="text-[10px] bg-white/20 px-1.5 py-0.5 rounded font-mono">v1.0.0</span>
+            </a>
 
-          <div className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-zinc-500 text-sm font-medium cursor-not-allowed select-none opacity-60">
-            <WindowsLogo className="w-4 h-4 opacity-70" />
-            <span>Windows (.exe)</span>
-            <span className="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full font-mono">
-              Next Week
+            <div className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-zinc-500 text-sm font-medium cursor-not-allowed select-none opacity-60">
+              <WindowsLogo className="w-4 h-4 opacity-70" />
+              <span>Windows (.exe)</span>
+              <span className="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full font-mono">
+                Next Week
+              </span>
+            </div>
+          </div>
+
+          {/* Apple App Store (Available in 48 hr) */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/5 text-zinc-500 text-xs font-medium cursor-not-allowed select-none opacity-60">
+            <Image
+              src={`${basePath}/apple-icon.png`}
+              alt="Apple"
+              width={14}
+              height={14}
+              className="w-3.5 h-3.5 object-contain brightness-0 invert opacity-60"
+            />
+            <span>Apple App Store</span>
+            <span className="text-[10px] bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded-full font-mono">
+              Available in 48 hr
             </span>
           </div>
         </div>
@@ -213,7 +236,13 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-300 flex items-center justify-center">
-                    <Apple className="w-6 h-6 fill-current" />
+                    <Image
+                      src={`${basePath}/apple-icon.png`}
+                      alt="Apple"
+                      width={28}
+                      height={28}
+                      className="w-6 h-6 object-contain brightness-0 invert"
+                    />
                   </div>
                   <span className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                     Latest Stable
@@ -229,14 +258,31 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <a
-                href={`${basePath}/downloads/VirdLauncherHub.dmg`}
-                download
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/40 transition-all duration-200"
-              >
-                <Download className="w-4 h-4" />
-                <span>Download for macOS (.dmg)</span>
-              </a>
+              <div className="space-y-3">
+                <a
+                  href={`${basePath}/downloads/VirdLauncherHub.dmg`}
+                  download
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/40 transition-all duration-200"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Download for macOS (.dmg)</span>
+                </a>
+
+                {/* App Store button in card */}
+                <div className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/5 text-zinc-500 text-xs font-medium cursor-not-allowed select-none opacity-60">
+                  <Image
+                    src={`${basePath}/apple-icon.png`}
+                    alt="Apple"
+                    width={14}
+                    height={14}
+                    className="w-3.5 h-3.5 object-contain brightness-0 invert opacity-60"
+                  />
+                  <span>Apple App Store</span>
+                  <span className="text-[10px] bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded-full font-mono">
+                    Available in 48 hr
+                  </span>
+                </div>
+              </div>
             </div>
 
             {/* Windows Greyed Out / Coming Next Week Card */}
