@@ -1,6 +1,11 @@
+const isProd = process.env.NODE_ENV === 'production';
+const repo = 'vird_launcher_hug_website';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  basePath: isProd ? `/${repo}` : '',
+  assetPrefix: isProd ? `/${repo}/` : '',
   images: {
     unoptimized: true,
   },

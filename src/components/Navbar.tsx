@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Terminal, Shield, LifeBuoy, Download } from "lucide-react";
+import { basePath } from "@/lib/basePath";
 
 export default function Navbar() {
   return (
@@ -9,7 +10,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-9 h-9 rounded-xl overflow-hidden shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-200">
             <Image
-              src="/logo.png"
+              src={`${basePath}/logo.png`}
               alt="Vird Launcher Hub Logo"
               width={36}
               height={36}
