@@ -125,7 +125,7 @@ export default function PrivacyPage() {
             our privacy and security team:
           </p>
           <p className="text-xs font-mono text-indigo-400 mt-2">
-            Email: <a href="mailto:privacy@virdlauncher.com">privacy@virdlauncher.com</a>
+            Email: <a href="mailto:labrujasiete@gmail.com">labrujasiete@gmail.com</a>
           </p>
         </section>
       </div>

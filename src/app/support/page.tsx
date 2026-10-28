@@ -53,10 +53,10 @@ export default function SupportPage() {
             Reach our engineering team directly with any bug reports, questions, or feature feedback.
           </p>
           <a
-            href="mailto:support@virdlauncher.com"
+            href="mailto:labrujasiete@gmail.com"
             className="text-xs font-semibold text-indigo-400 hover:text-indigo-300 font-mono"
           >
-            support@virdlauncher.com &rarr;
+            labrujasiete@gmail.com &rarr;
           </a>
         </div>
 

@@ -117,7 +117,7 @@ export default function TermsPage() {
             For questions regarding these Terms and Conditions, please contact:
           </p>
           <p className="text-xs font-mono text-indigo-400 mt-2">
-            Email: <a href="mailto:legal@virdlauncher.com">legal@virdlauncher.com</a>
+            Email: <a href="mailto:labrujasiete@gmail.com">labrujasiete@gmail.com</a>
           </p>
         </section>
       </div>

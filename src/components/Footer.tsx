@@ -78,7 +78,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:support@virdlauncher.com"
+                  href="mailto:labrujasiete@gmail.com"
                   className="hover:text-white transition-colors text-zinc-400"
                 >
                   Contact Support

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { basePath } from "@/lib/basePath";
 import {
   Play,
   Terminal,
@@ -76,115 +77,17 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Mock UI Showcase */}
-        <div className="mt-16 max-w-5xl mx-auto rounded-2xl p-1 bg-gradient-to-b from-white/15 via-white/5 to-white/0 shadow-2xl shadow-black/80">
-          <div className="rounded-xl bg-[#10121d] border border-white/10 overflow-hidden text-left shadow-2xl">
-            {/* Window Header */}
-            <div className="px-4 py-3 bg-[#151724] border-b border-white/5 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                <span className="ml-3 text-xs text-zinc-400 font-mono">Vird Launcher Hub</span>
-              </div>
-              <div className="flex items-center gap-2 text-[11px] text-zinc-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                <span className="font-mono">GitHub: Connected</span>
-              </div>
-            </div>
-
-            {/* Hub Workspace Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-12 min-h-[380px]">
-              {/* Left Projects Pane */}
-              <div className="md:col-span-5 p-4 border-r border-white/5 bg-[#0e101a] space-y-3">
-                <div className="flex items-center justify-between text-xs font-semibold text-zinc-400 uppercase tracking-wider px-1">
-                  <span>Active Workspaces</span>
-                  <span className="text-[10px] bg-white/5 px-2 py-0.5 rounded text-zinc-300">3 Running</span>
-                </div>
-
-                {/* Project Item 1 */}
-                <div className="p-3 rounded-xl bg-white/5 border border-indigo-500/30 shadow-sm flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-indigo-500/20 text-indigo-300 flex items-center justify-center font-bold text-xs">
-                      API
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-white">billing-service</div>
-                      <div className="text-[11px] text-zinc-400 font-mono">Port 8080 • git: main</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                      Running
-                    </span>
-                  </div>
-                </div>
-
-                {/* Project Item 2 */}
-                <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-pink-500/20 text-pink-300 flex items-center justify-center font-bold text-xs">
-                      n8n
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-white">n8n Automation Engine</div>
-                      <div className="text-[11px] text-zinc-400 font-mono">Docker Stack • Port 5678</div>
-                    </div>
-                  </div>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                    Active
-                  </span>
-                </div>
-
-                {/* Project Item 3 */}
-                <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-xs">
-                      UI
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-white">customer-portal</div>
-                      <div className="text-[11px] text-zinc-400 font-mono">Port 3000 • git: feat/auth</div>
-                    </div>
-                  </div>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                    Ready
-                  </span>
-                </div>
-              </div>
-
-              {/* Right Terminal & Inspection Pane */}
-              <div className="md:col-span-7 p-4 bg-[#0a0c13] flex flex-col justify-between font-mono text-xs">
-                <div className="space-y-2">
-                  <div className="text-[11px] text-zinc-500 border-b border-white/5 pb-2 flex items-center justify-between">
-                    <span>LIVE STREAMING LOGS (billing-service)</span>
-                    <span className="text-zinc-600">PID: 48192</span>
-                  </div>
-                  <div className="text-zinc-400 space-y-1 pt-1 text-[11px]">
-                    <div className="text-indigo-400">&gt; Starting microservice on port 8080...</div>
-                    <div className="text-zinc-500">[02:30:11] Connected to local PostgreSQL cluster</div>
-                    <div className="text-zinc-500">[02:30:12] Cache warm: 42 routes loaded</div>
-                    <div className="text-emerald-400">[02:30:13] HTTP server listening on http://localhost:8080</div>
-                    <div className="text-zinc-400">[02:30:18] GET /api/v1/health status: 200 OK (2.1ms)</div>
-                  </div>
-                </div>
-
-                <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px]">
-                  <div className="text-zinc-400 flex items-center gap-2">
-                    <Network className="w-3.5 h-3.5 text-indigo-400" />
-                    <span>Port 8080: Exclusive owner</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <button className="px-2 py-1 bg-white/5 hover:bg-white/10 rounded text-zinc-300 transition-colors">
-                      Open in Browser
-                    </button>
-                    <button className="px-2 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 rounded transition-colors">
-                      Stop Process
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* App Screenshot Showcase */}
+        <div className="mt-16 max-w-5xl mx-auto rounded-2xl p-1 bg-gradient-to-b from-white/20 via-white/5 to-white/0 shadow-2xl shadow-black/90">
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-[#10121d] shadow-2xl">
+            <Image
+              src={`${basePath}/app-screenshot.png`}
+              alt="Vird Launcher Hub Interface on macOS"
+              width={1920}
+              height={1080}
+              className="w-full h-auto object-cover rounded-xl"
+              priority
+            />
           </div>
         </div>
       </section>
