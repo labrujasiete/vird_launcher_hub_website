@@ -16,7 +16,18 @@ import {
   ArrowRight,
   Boxes,
   Network,
+  Download,
+  Apple,
+  Clock,
 } from "lucide-react";
+
+function WindowsLogo({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802" />
+    </svg>
+  );
+}
 
 export default function HomePage() {
   return (
@@ -46,17 +57,28 @@ export default function HomePage() {
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="#download"
+            href={`${basePath}/downloads/VirdLauncherHub.dmg`}
+            download
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-xl shadow-indigo-600/30 hover:shadow-indigo-500/40 transition-all duration-200"
           >
-            <Play className="w-4 h-4 fill-current" />
-            <span>Download on Mac App Store</span>
+            <Apple className="w-4 h-4 fill-current" />
+            <span>Download for macOS (.dmg)</span>
+            <span className="text-[10px] bg-white/20 px-1.5 py-0.5 rounded font-mono">v1.0.0</span>
           </a>
+
+          <div className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-zinc-500 text-sm font-medium cursor-not-allowed select-none opacity-60">
+            <WindowsLogo className="w-4 h-4 opacity-70" />
+            <span>Windows (.exe)</span>
+            <span className="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full font-mono">
+              Next Week
+            </span>
+          </div>
+
           <Link
             href="/support/"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-200 font-medium text-sm transition-all duration-200"
           >
-            <span>Documentation & Support</span>
+            <span>Docs & Support</span>
             <ArrowRight className="w-4 h-4 text-zinc-400" />
           </Link>
         </div>
@@ -178,33 +200,83 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Download Section */}
       <section id="download" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-indigo-900/40 via-purple-900/30 to-zinc-900/40 border border-white/10 text-center relative overflow-hidden shadow-2xl">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Ready to upgrade your macOS development workflow?
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#151726] to-[#0c0d16] border border-white/10 text-center relative overflow-hidden shadow-2xl">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs text-indigo-300 font-mono mb-4">
+            <Download className="w-3.5 h-3.5" />
+            <span>Official Releases</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+            Download Vird Launcher Hub
           </h2>
-          <p className="text-zinc-300 max-w-xl mx-auto text-sm sm:text-base mb-8">
-            Download Vird Launcher Hub for macOS today. Compatible with Apple Silicon (M1/M2/M3/M4)
-            and Intel Macs running macOS 13.0 or later.
+          <p className="text-zinc-400 max-w-xl mx-auto text-sm sm:text-base mb-10">
+            Native, secure, and privacy-first developer workspace. Choose your platform below to get started.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://apps.apple.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-zinc-950 font-semibold text-sm hover:bg-zinc-100 transition-colors shadow-lg"
-            >
-              <span>Download on Mac App Store</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
-            <Link
-              href="/support/"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-colors"
-            >
-              <span>Visit Support Center</span>
-            </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto text-left">
+            {/* macOS Active Download Card */}
+            <div className="p-6 rounded-2xl bg-white/[0.03] border border-indigo-500/40 relative flex flex-col justify-between shadow-xl shadow-indigo-950/20">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-300 flex items-center justify-center">
+                    <Apple className="w-6 h-6 fill-current" />
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Latest Stable
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-white">macOS Universal</h3>
+                <p className="text-xs text-zinc-400 mt-1 mb-4 leading-relaxed">
+                  Direct DMG installer for Apple Silicon (M1/M2/M3/M4) and Intel Macs running macOS 13.0 or later.
+                </p>
+                <div className="text-[11px] text-zinc-500 font-mono space-y-1 mb-6">
+                  <div>Package: VirdLauncherHub.dmg</div>
+                  <div>Version: 1.0.0 (Size: 3.5 MB)</div>
+                </div>
+              </div>
+
+              <a
+                href={`${basePath}/downloads/VirdLauncherHub.dmg`}
+                download
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/40 transition-all duration-200"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download for macOS (.dmg)</span>
+              </a>
+            </div>
+
+            {/* Windows Greyed Out / Coming Next Week Card */}
+            <div className="p-6 rounded-2xl bg-white/[0.01] border border-white/5 relative flex flex-col justify-between opacity-60">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 text-zinc-500 flex items-center justify-center">
+                    <WindowsLogo className="w-6 h-6 opacity-70" />
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center gap-1.5">
+                    <Clock className="w-3 h-3" />
+                    <span>Next Week</span>
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-zinc-400">Windows (x64 / ARM)</h3>
+                <p className="text-xs text-zinc-500 mt-1 mb-4 leading-relaxed">
+                  Native Windows 10 & 11 executable package. Currently undergoing final compatibility testing.
+                </p>
+                <div className="text-[11px] text-zinc-600 font-mono space-y-1 mb-6">
+                  <div>Package: VirdLauncherHub-Setup.exe</div>
+                  <div>Status: Releasing next week</div>
+                </div>
+              </div>
+
+              <button
+                disabled
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/5 text-zinc-500 font-semibold text-xs cursor-not-allowed select-none border border-white/5"
+              >
+                <Clock className="w-4 h-4" />
+                <span>Available Next Week</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>

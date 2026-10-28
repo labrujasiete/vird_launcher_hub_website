@@ -44,13 +44,14 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            href="/#download"
+          <a
+            href={`${basePath}/downloads/VirdLauncherHub.dmg`}
+            download
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/40 transition-all duration-200"
           >
             <Download className="w-3.5 h-3.5" />
-            <span>Get on Mac App Store</span>
-          </Link>
+            <span>Download .DMG</span>
+          </a>
         </div>
       </div>
     </header>
