@@ -1,5 +1,5 @@
 const isProd = process.env.NODE_ENV === 'production';
-const repo = 'vird_launcher_hug_website';
+const repo = 'vird_launcher_hub_website';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
